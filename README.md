@@ -1,7 +1,7 @@
 # Molecular Orbitals and Reaction Modeling
 
 [![PyPI version](https://badge.fury.io/py/molecular_orbitals.svg)](https://badge.fury.io/py/molecular_orbitals)
-[![Build Status](https://travis-ci.com/dkrizhanovskyi/molecular_orbitals.svg?branch=main)](https://travis-ci.com/dkrizhanovskyi/molecular_orbitals)
+[![Documentation Status](https://readthedocs.org/projects/molecular-orbitals-and-reaction-modeling/badge/?version=latest)](https://molecular-orbitals-and-reaction-modeling.readthedocs.io/en/latest/?badge=latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Overview
@@ -97,7 +97,7 @@ molecular_orbitals visualize_orbitals molecule.xyz
 
 ### Documentation
 
-Full documentation, including detailed examples and API references, can be found on the [official documentation site](https://molecular_orbitals.readthedocs.io).
+Full documentation, including detailed examples and API references, can be found on the [official documentation site](https://molecular-orbitals-and-reaction-modeling.readthedocs.io).
 
 ### Contributing
 
