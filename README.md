@@ -1,126 +1,121 @@
 # Molecular Orbitals and Reaction Modeling
 
-This project provides tools for modeling molecular orbitals and chemical reactions using quantum chemistry methods. It includes support for both built-in methods and integration with external libraries like Psi4.
+[![PyPI version](https://badge.fury.io/py/molecular_orbitals.svg)](https://badge.fury.io/py/molecular_orbitals)
+[![Build Status](https://travis-ci.com/dkrizhanovskyi/molecular_orbitals.svg?branch=main)](https://travis-ci.com/dkrizhanovskyi/molecular_orbitals)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Features
+## Overview
 
-- **Molecular Orbital Calculation:** Supports Hartree-Fock method and integration with Psi4 for more advanced calculations.
-- **Reaction Mechanism Analysis:** Analyze chemical reactions, including activation energy and transition states.
-- **Visualization:** 2D and 3D visualization of molecular orbitals.
-- **Data Parsing and Exporting:** Parse XYZ files and export data in JSON or CSV formats.
+Molecular Orbitals and Reaction Modeling is a Python library for modeling molecular orbitals and analyzing chemical reactions using quantum chemistry methods. The library is designed to be easy to use, extendable, and compatible with external quantum chemistry tools like Psi4.
 
-## Installation
+### Key Features
 
-### Requirements
+- **Molecular Orbital Calculation:**
+  - Supports Hartree-Fock and integration with Psi4.
+  - Flexible input options for various molecular structures.
+  - Customizable calculation methods.
 
-- Python 3.10+
-- Optional: [Psi4](https://psicode.org/) for advanced quantum chemistry calculations
+- **Reaction Mechanism Analysis:**
+  - Calculate activation energy and identify transition states.
+  - Support for complex multi-step reactions.
+  - Integration with visualization tools for reaction pathways.
 
-### Installing Dependencies
+- **Visualization:**
+  - Generate 2D and 3D visualizations of molecular orbitals.
+  - Save visualizations in various formats (PNG, PDF, etc.).
+  - Interactive plotting support.
 
-First, ensure you have Python 3.10+ installed. Then, clone the repository and install the required dependencies:
+- **Data Handling:**
+  - Parse XYZ files for molecular data.
+  - Export data to JSON or CSV formats.
+  - Easy integration with other data processing libraries.
+
+### Installation
+
+You can install the `molecular_orbitals` library directly from PyPI:
 
 ```bash
-pip install -r requirements.txt
+pip install molecular_orbitals
 ```
 
-If you want to use Psi4 for calculations, install it separately:
+For advanced quantum chemistry calculations, you may also want to install Psi4:
 
 ```bash
 conda install psi4 -c psi4
 ```
 
-## Usage
+### Getting Started
 
-### Command-Line Interface (CLI)
-
-This project provides a CLI to interact with the core functionalities.
-
-#### Parsing XYZ files
-
-Parse an XYZ file to extract molecular information:
-
-```bash
-python cli.py parse_xyz molecule.xyz
-```
-
-#### Exporting data
-
-Export molecular data to JSON or CSV:
-
-```bash
-python cli.py export_data molecule.xyz output.json --format json
-```
-
-#### Visualizing orbitals
-
-Visualize molecular orbitals in 2D or 3D:
-
-```bash
-python cli.py visualize_orbitals molecule.xyz
-```
-
-### Library Usage
-
-You can also use this project as a Python library. Below is a simple example:
+Here is a quick example to get you started with calculating molecular orbitals:
 
 ```python
 from molecular_orbitals.core.molecule import Molecule, Atom
 from molecular_orbitals.core.orbital_calculation import OrbitalCalculation
 
-# Create a molecule
-atoms = [Atom('H', (0, 0, 0)), Atom('H', (0, 0, 1))]
+# Define a molecule (e.g., H2)
+atoms = [
+    Atom('H', (0.0, 0.0, 0.0)),
+    Atom('H', (0.0, 0.0, 0.74))
+]
 molecule = Molecule(atoms)
 
-# Calculate orbitals
+# Calculate orbitals using the Hartree-Fock method
 calc = OrbitalCalculation(molecule)
-orbitals = calc.calculate_orbitals()
+orbitals = calc.calculate_orbitals(method='HF')
 
-# Print the orbital matrix
+print("Orbital matrix:")
 print(orbitals)
 ```
 
-### Examples
+### Command-Line Interface (CLI)
 
-Here are some example scripts that demonstrate how to use the various features of the project:
+The library also includes a command-line interface (CLI) for easier interaction. Here are some common commands:
 
-- **Example 1:** [Basic Orbital Calculation](examples/orbital_calculation_example.py)
-- **Example 2:** [Reaction Mechanism Analysis](examples/reaction_mechanism_example.py)
-
-### FAQ
-
-#### Q: How do I install Psi4 for advanced calculations?
-A: You can install Psi4 using Conda with the following command:
-```bash
-conda install psi4 -c psi4
-```
-
-#### Q: Can I extend the project with new calculation methods?
-A: Yes, you can add new methods by modifying the `orbital_calculation.py` module and updating the CLI or library interface as needed.
-
-## Running Tests
-
-To run the unit tests, use:
+#### Parsing XYZ Files
 
 ```bash
-python -m unittest discover -s molecular_orbitals/tests
+molecular_orbitals parse_xyz molecule.xyz
 ```
 
-## Contributing
+This command parses an XYZ file and outputs the molecular structure.
 
-Feel free to submit issues and pull requests. Contributions are welcome!
+#### Exporting Data
 
-### Contributing Guide
+Export molecular data to JSON or CSV format:
 
-1. **Fork the repository** to your GitHub account.
-2. **Clone your fork** to your local machine.
-3. **Create a new branch** for your changes.
-4. **Make your changes** and commit them with descriptive messages.
-5. **Push your changes** to your fork on GitHub.
-6. **Submit a pull request** to the main repository.
+```bash
+molecular_orbitals export_data molecule.xyz output.json --format json
+```
 
-Please ensure that your code follows the existing style and that all tests pass before submitting.
+#### Visualizing Orbitals
 
-## License
+Generate a 2D or 3D visualization of molecular orbitals:
 
-This project is licensed under the MIT License.
+```bash
+molecular_orbitals visualize_orbitals molecule.xyz
+```
+
+### Documentation
+
+Full documentation, including detailed examples and API references, can be found on the [official documentation site](https://molecular_orbitals.readthedocs.io).
+
+### Contributing
+
+We welcome contributions from the community! Please follow these steps to contribute:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes and commit them (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Open a Pull Request.
+
+For more details, see our [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
+### License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+### Acknowledgments
+
+We would like to thank the open-source community for their invaluable contributions to this project.
+

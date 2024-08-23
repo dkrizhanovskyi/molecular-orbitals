@@ -1,4 +1,5 @@
 core
 io
+tests
 utils
 visualization

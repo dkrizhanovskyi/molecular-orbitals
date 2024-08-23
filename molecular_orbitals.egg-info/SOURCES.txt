@@ -17,6 +17,7 @@ molecular_orbitals.egg-info/dependency_links.txt
 molecular_orbitals.egg-info/entry_points.txt
 molecular_orbitals.egg-info/requires.txt
 molecular_orbitals.egg-info/top_level.txt
+tests/__init__.py
 tests/test_molecule.py
 tests/test_orbital_calculation.py
 utils/__init__.py
