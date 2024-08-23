@@ -7,10 +7,7 @@ build:
     python: "3.12"
 
 git:
-  clone:
-    depth: 1
-    submodules: true
-    version: main
+  version: main
 
 sphinx:
   configuration: docs/conf.py
