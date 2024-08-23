@@ -1,36 +1,34 @@
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../../'))
+sys.path.insert(0, os.path.abspath('../..'))
 
-# Configuration file for the Sphinx documentation builder.
-#
-# For the full list of built-in configuration values, see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
-
-# -- Project information -----------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-
+# Project information
 project = 'Molecular Orbitals and Reaction Modeling'
 copyright = '2024, Daniil Krizhanovskyi'
 author = 'Daniil Krizhanovskyi'
-release = '0.1.0'
+release = '0.1'
 
-# -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
-
+# General configuration
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
     'sphinx.ext.viewcode',
+    'sphinx.ext.githubpages',
 ]
 
 templates_path = ['_templates']
 exclude_patterns = []
 
-
-
-# -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-
+# Options for HTML output
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+
+# If you need LaTeX support
+latex_elements = {
+    'papersize': 'a4paper',
+    'pointsize': '10pt',
+}
+
+# Napoleon settings (for Google and NumPy style docstrings)
+napoleon_google_docstring = True
+napoleon_numpy_docstring = True
