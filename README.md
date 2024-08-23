@@ -3,6 +3,7 @@
 [![PyPI version](https://badge.fury.io/py/molecular_orbitals.svg)](https://badge.fury.io/py/molecular_orbitals)
 [![Documentation Status](https://readthedocs.org/projects/molecular-orbitals-and-reaction-modeling/badge/?version=latest)](https://molecular-orbitals-and-reaction-modeling.readthedocs.io/en/latest/?badge=latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13368046.svg)](https://doi.org/10.5281/zenodo.13368046)
 
 ## Overview
 
